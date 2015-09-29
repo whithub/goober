@@ -2,6 +2,15 @@
 
 
 
-<%= link_to 'Sign In', new_user_session_path, :method => :get %>
+<%= link_to 'Sign In as Rider', new_user_session_path, :method => :get %>
 
-<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<%= link_to 'Sign out (as rider)', destroy_user_session_path, :method => :delete %>
+
+<br>
+<br>
+<br>
+
+
+<%= link_to 'Sign In as Driver', new_admin_session_path, :method => :get %>
+
+<%= link_to 'Sign out (as driver)', destroy_admin_session_path, :method => :delete %>
