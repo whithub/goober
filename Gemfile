@@ -5,7 +5,7 @@ gem 'rails', '4.2.4'
 gem 'rspec-rails'
 gem 'pg'
 gem 'puma'
-
+gem 'devise'
 
 gem 'sass-rails', '~> 5.0'
 
