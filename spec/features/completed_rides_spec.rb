@@ -16,12 +16,10 @@ describe "Completed ride", type: :feature do
 
     ride.admin = admin
     ride.user = user
-
-    login_as(admin, scope: :admin)
-    login_as(user, scope: :user)
   end
 
-  it 'info can be viewed on rider dashboard' do
+  xit 'info can be viewed on rider dashboard' do
+    login_as(user, scope: :user)
     visit '/users/rides'
 
     # assert_selector('div', id: 'completed_rides', text: '')
@@ -29,7 +27,8 @@ describe "Completed ride", type: :feature do
   end
 
 
-  it 'info can be viewed on driver dashboard' do
+  xit 'info can be viewed on driver dashboard' do
+    login_as(admin, scope: :admin)
     visit '/admins/rides'
 
   end

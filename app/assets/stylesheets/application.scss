@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.flash {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  background-color: #60BFBF;
+}

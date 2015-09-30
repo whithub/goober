@@ -1,3 +1,55 @@
-// Place all the styles related to the welcome controller here.
+// Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-home {
+  //  background-color: #1B3C59;
+  background-image: image-url("uber-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  min-height: 100vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.welcome-block {
+  background-color: white;
+  opacity: 0.9;
+}
+
+.home {
+  color: black;
+  font-weight: 100;
+  font-size: 100;
+}
+
+h1.home {
+  font-size: 60px;
+  color: #F8BB44;
+  font-weight: 300;
+}
+
+h2.home {
+  color: #F8BB44;
+  font-weight: 200;
+}
+
+
+a.btn.btn-lg.btn-default.btn-home {
+  background-color: #60BFBF;
+  border-width: 2px;
+  color: white;
+  font-weight: 100;
+  border-color: #60BFBF;
+  margin-top: 20px;
+  margin-right: 1%;
+}
+
+a.btn.btn-lg.btn-default.btn-home:hover {
+  opacity: 0.4;
+}
+
+img.img-circle.img-thumbnail.home-image {
+  height: 200px;
+}

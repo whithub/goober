@@ -12,8 +12,12 @@ RSpec.describe Ride, type: :model do
   it { is_expected.to belong_to(:admin) }
   it { is_expected.to belong_to(:user) }
 
-  xit "has a default status of 'active' " do
+  it "has a default status of 'active' " do
     expect(ride.status).to eq('active')
+  end
+
+  it 'has a cost' do
+    expect(ride.cost).to eq(51)
   end
 
   describe 'status' do
