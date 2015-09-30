@@ -31,6 +31,9 @@ class Users::RidesController < ApplicationController
     current_user.rides.where(status: :complete)
   end
 
+  # def cost
+  #   ((Time.parse(ride.dropoff_time) - Time.parse(ride.pickup_time))/60) * 3
+  # end
 
   private
 

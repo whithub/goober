@@ -11,8 +11,8 @@ describe "Completed ride", type: :feature do
                 num_of_passengers: 2,
                 created_at: Time.now,
                 accepted_time: '3:30pm',
-                pickup_time: '3:38',
-                dropoff_time: '3:58')
+                pickup_time: '3:38pm',
+                dropoff_time: '3:58pm')
 
     ride.admin = admin
     ride.user = user

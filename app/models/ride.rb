@@ -31,4 +31,9 @@ class Ride < ActiveRecord::Base
 
   end
 
+  def cost
+    ((Time.parse(dropoff_time) - Time.parse(pickup_time))/60) * 3
+  end
+
+
 end
