@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
-    # get 'rides', to: 'rides#index'
     resources :rides do
       member do
         get :ride_accepted
@@ -17,7 +16,6 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
-    # get '/users/rides', to: 'users/rides#index'
     resources :rides
   end
 

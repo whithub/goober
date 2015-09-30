@@ -2,8 +2,6 @@ class Admins::RidesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_current_ride, only: [:index]
 
-  attr_accessor :completed_rides
-
   def index
     @rides = Ride.all
     @rides_count = current_admin.rides.count
@@ -18,7 +16,6 @@ class Admins::RidesController < ApplicationController
     @ride.admin = current_admin
     @ride.accepted_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.ride_accepted!
-    # @accepted_at = @ride.updated_at.strftime('%l:%M %P')
     redirect_to admins_rides_path, notice: "You've accepted a ride."
   end
 
@@ -37,11 +34,10 @@ class Admins::RidesController < ApplicationController
     redirect_to admins_rides_path
   end
 
-
   private
 
   def set_current_ride
-    @current_ride = current_admin.rides.last #find(params[:id])
+    @current_ride = current_admin.rides.last
   end
 
   def ride_params
