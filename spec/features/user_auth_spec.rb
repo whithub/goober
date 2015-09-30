@@ -5,7 +5,7 @@ describe "UserSessions", type: :feature do
   context "brand new user" do
     it "can sign up successfully" do
       visit '/'
-      click_on "Sign In as a Rider"
+      click_on "A Rider"
       click_on "Sign up"
 
       fill_in 'user_name', with: 'Justin'
@@ -29,7 +29,7 @@ describe "UserSessions", type: :feature do
                    password_confirmation: 'password')
 
       visit '/'
-      click_on "Sign In as a Rider"
+      click_on "A Rider"
       click_on "Sign up"
 
       fill_in 'user_email', with: 'justin@example.com'

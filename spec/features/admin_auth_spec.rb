@@ -5,7 +5,7 @@ describe "AdminSessions", type: :feature do
   context "brand new user" do
     it "can sign up successfully" do
       visit '/'
-      click_on "Sign In as a Driver"
+      click_on "A Driver"
       click_on "Sign up"
 
       fill_in 'admin_name', with: 'Whitney'
@@ -35,7 +35,7 @@ describe "AdminSessions", type: :feature do
                     password_confirmation: 'password')
 
       visit '/'
-      click_on "Sign In as a Driver"
+      click_on "A Driver"
       click_on "Sign up"
 
       fill_in 'admin_email', with: 'justin@example.com'
