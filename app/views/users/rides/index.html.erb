@@ -4,14 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12 rider-dashboard-header">
-      <h1>Rider Dashboard </h1>
+      <h1> <%= current_user.name.capitalize %>'s Rider Dashboard </h1>
       <br>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-12 request-ride-button" >
-      <% if current_user.rides.all? { |each_ride| each_ride.complete? } %>
+      <% if current_user.rides.all? { |ride| ride.complete? } %>
         <%= link_to "Request A Ride", new_users_ride_path, class: "btn btn-lg btn-default" %>
       <% end %>
     </div>

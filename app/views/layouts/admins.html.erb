@@ -33,15 +33,14 @@
     </div>
   </nav>
 
-  <br>
-  <br>
-  <br>
-  <br>
+  <br><br>
+  <br><br>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12 rider-dashboard-header">
-        <h1>Driver Dashboard </h1>
-        <br>
+        <h1> <%= current_admin.name.capitalize %>'s Driver Dashboard </h1>
+        <h5> Seat Capacity: <%= current_admin.car_passenger_capacity %></h5><br>
       </div>
     </div>
     <div id="page">

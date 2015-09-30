@@ -7,9 +7,8 @@ class Users::RidesController < ApplicationController
   end
 
   def index
-    # @requested_at = current_user.rides.first.created_at.strftime('%l:%M %P')
     @rides_count = current_user.rides.count
-    @completed_rides = current_user.rides.where(status: 3)
+    @completed_rides = current_user.rides.completed
 
     if request.xhr?
       render layout: false
@@ -33,14 +32,6 @@ class Users::RidesController < ApplicationController
     end
   end
 
-  def completed_rides
-    current_user.rides.where(status: :complete)
-  end
-
-  # def cost
-  #   ((Time.parse(ride.dropoff_time) - Time.parse(ride.pickup_time))/60) * 3
-  # end
-
   private
 
   def ride_params
@@ -48,7 +39,7 @@ class Users::RidesController < ApplicationController
   end
 
   def set_current_ride
-    @current_ride = current_user.rides.last #find(params[:id])
+    @current_ride = current_user.rides.last
   end
 
 end

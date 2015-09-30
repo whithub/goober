@@ -6,8 +6,7 @@ class Admins::RidesController < ApplicationController
 
   def index
     @rides = Ride.all
-    @rides_count = current_admin.rides.count
-    @completed_rides = current_admin.rides.where(status: 3)
+    @completed_rides = current_admin.rides.completed
 
     if request.xhr?
       render layout: false
@@ -16,11 +15,8 @@ class Admins::RidesController < ApplicationController
     end
   end
 
-  def new
-  end
-
   def ride_accepted
-    @ride = Ride.find(params[:id])
+    find_ride
     @ride.admin = current_admin
     @ride.accepted_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.ride_accepted!
@@ -28,14 +24,14 @@ class Admins::RidesController < ApplicationController
   end
 
   def picked_up
-    @ride = Ride.find(params[:id])
+    find_ride
     @ride.pickup_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.picked_up!
     redirect_to admins_rides_path
   end
 
   def dropped_off
-    @ride = Ride.find(params[:id])
+    find_ride
     @ride.dropoff_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.dropped_off!
     @current_ride = ''
@@ -50,5 +46,9 @@ class Admins::RidesController < ApplicationController
 
   def ride_params
     params.require(:ride).permit(:admin_id, :status)
+  end
+
+  def find_ride
+    @ride = Ride.find(params[:id])
   end
 end

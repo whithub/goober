@@ -56,9 +56,9 @@
   </thead>
 
   <tbody>
-    <tr>
+    <!--<tr>-->
     <% @rides.each do |ride| %>
-      <% if ride.num_of_passengers <= current_admin.car_passenger_capacity && ride.active? %>
+      <% if ride.num_of_passengers <= current_admin.car_passenger_capacity  %>
         <td><%= ride.pick_up_location.capitalize %></td>
         <td><%= ride.num_of_passengers %></td>
         <td>
@@ -68,7 +68,7 @@
         </td>
       <% end %>
     <% end %>
-    </tr>
+    <!--</tr>-->
   </tbody>
 </table>
 

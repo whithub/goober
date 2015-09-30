@@ -4,4 +4,8 @@ class Admins::SessionsController < Devise::SessionsController
     admins_rides_path
   end
 
+  def after_sign_up_path_for(resource)
+    admins_rides_path
+  end
+
 end

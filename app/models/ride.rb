@@ -10,6 +10,7 @@ class Ride < ActiveRecord::Base
   enum status: { active: 0, accepted: 1, in_transit: 2, complete: 3 }
 
   scope :not_complete, -> { where(status: [0,1,2]) }
+  scope :completed, -> { where(status: 3) }
 
   include AASM
   aasm column: :status, enum: true do

@@ -19,8 +19,7 @@ describe "AdminSessions", type: :feature do
 
       click_button "Sign up"
 
-      expect(current_path).to eq(root_path)
-      #TODOexpect(current_path).to eq('/admins/rides')
+      expect(current_path).to eq('/admins/rides')
       expect(page).to have_content('Welcome! You have signed up successfully.')
     end
 
