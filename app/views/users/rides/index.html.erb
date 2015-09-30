@@ -72,20 +72,21 @@
     </tr>
     </thead>
 
-    <tr>
+
     <tbody>
       <% @completed_rides.each do |ride| %>
-        <td><%= ride.user.name.capitalize %></td>
-        <td><%= ride.admin.name.capitalize %></td>
-        <td><%= ride.pick_up_location.capitalize %></td>
-        <td><%= ride.drop_off_location.capitalize %></td>
-        <td><%= ride.created_at.strftime('%l:%M %P') %></td>
-        <td><%= ride.accepted_time %></td>
-        <td><%= ride.pickup_time %></td>
-        <td><%= ride.dropoff_time %></td>
-        <td>$<%= ride.cost.to_i %>.00</td>
+        <tr>
+          <td><%= ride.user.name.capitalize %></td>
+          <td><%= ride.admin.name.capitalize %></td>
+          <td><%= ride.pick_up_location.capitalize %></td>
+          <td><%= ride.drop_off_location.capitalize %></td>
+          <td><%= ride.created_at.strftime('%l:%M %P') %></td>
+          <td><%= ride.accepted_time %></td>
+          <td><%= ride.pickup_time %></td>
+          <td><%= ride.dropoff_time %></td>
+          <td>$<%= ride.cost.to_i %>.00</td>
+        </tr>
       <% end %>
-    </tr>
     </tbody>
   </table>
 </div>

@@ -45,7 +45,7 @@
 <% end %>
 
 <table class="table table-striped">
-  <h3> Available Rides: <%= @rides.count %></h3>
+  <h3> Available Rides: <%= @rides.where.not(status: 3).count %></h3>
 
   <thead>
   <tr>
@@ -56,7 +56,7 @@
   </thead>
 
   <tbody>
-    <% @rides.each do |ride| %>
+    <% @rides.where.not(status: 3).each do |ride| %>
       <% if ride.num_of_passengers <= current_admin.car_passenger_capacity  %>
         <tr>
           <td><%= ride.pick_up_location.capitalize %></td>
@@ -93,9 +93,9 @@
   </tr>
   </thead>
 
-  <tr>
-    <tbody>
+  <tbody>
     <% @completed_rides.each do |ride| %>
+    <tr>
       <td><%= ride.user.name.capitalize %></td>
       <td><%= ride.admin.name.capitalize %></td>
       <td><%= ride.pick_up_location.capitalize %></td>
@@ -105,7 +105,7 @@
       <td><%= ride.pickup_time %></td>
       <td><%= ride.dropoff_time %></td>
       <td>$<%= ride.cost.to_i %>.00</td>
-    <% end %>
     </tr>
+    <% end %>
   </tbody>
 </table>
