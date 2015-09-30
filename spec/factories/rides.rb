@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :ride do
-    admin_id 3
+    admin_id 1
     user_id  7
     status 'active'
     pick_up_location 'foo'

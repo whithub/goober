@@ -2,3 +2,16 @@
 
 
 <%= link_to 'Sign out (as driver)', destroy_admin_session_path, :method => :delete %>
+
+
+
+<h2> Available Rides: </h2>
+
+<% @rides.each do |ride| %>
+  <li>
+    <h4> Pick Up Location: <%= ride.pick_up_location %></h4>
+    <h4> Number of passengers: <%= ride.num_of_passengers %></h4>
+
+    <%= link_to "Accept", admins_ride_path(ride), method: :put %>
+  </li>
+<% end %>

@@ -58,7 +58,7 @@ describe "User", :authentication, type: :feature do
 
     expect(page).to_not have_button('Request A Ride')
 
-    user.rides.status = 'complete'
+    user.rides.first.status = 'complete'
 
     visit '/users/rides'
     expect(page).to have_button('Request A Ride')
