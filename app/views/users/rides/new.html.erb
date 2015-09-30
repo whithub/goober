@@ -1,1 +1,27 @@
 <h1> Enter Info below to reserve a ride </h1>
+
+
+<%= form_for :user do |f| %>
+  <%#= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :pick_up_location %>
+    <%= f.text_field :pick_up_location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :drop_off_location %><br />
+    <%= f.text_field :drop_off_location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_of_passengers %>
+    <%= f.number_field :num_of_passengers, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Request Ride" %>
+  </div>
+<% end %>
+
+<%#= render "devise/shared/links" %>
