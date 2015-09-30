@@ -32,6 +32,7 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'webmock'
+  gem 'database_cleaner'
 end
 
 group :production do

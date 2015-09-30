@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :phone_number
+    devise_parameter_sanitizer.for(:sign_up) << :car_make
+    devise_parameter_sanitizer.for(:sign_up) << :car_model
+    devise_parameter_sanitizer.for(:sign_up) << :car_passenger_capacity
   end
 
 

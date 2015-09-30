@@ -28,6 +28,9 @@ RSpec.describe User, type: :model do
     user.phone_number = '1234'
     user.should_not be_valid
 
+    user.phone_number = '12345678901234567890'
+    user.should_not be_valid
+
     user.phone_number = '1234567890'
     user.should be_valid
   end
