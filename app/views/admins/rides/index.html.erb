@@ -3,6 +3,25 @@
 
 <%= link_to 'Sign out (as driver)', destroy_admin_session_path, :method => :delete %>
 
+<h3>Rides: <%= current_admin.rides.count %></h3>
+<h3>Current Ride Info:</h3>
+
+<% if current_admin.rides.present? %>
+  <h2> Pick Up Location: <%= @current_ride.pick_up_location %></h2>
+  <h2> Number of passengers: <%= @current_ride.num_of_passengers %></h2>
+
+  <%if @current_ride.status == 'accepted' %>
+    <%= link_to "Customer Picked Up", picked_up_admins_ride_path(@current_ride) %>
+  <% elsif @current_ride.status == 'in_transit' %>
+    <%= link_to "Customer Dropped Off", dropped_off_admins_ride_path(@current_ride) %>
+  <% end %>
+
+<% end %>
+
+<hr>
+<hr>
+<hr>
+<hr>
 
 
 <h2> Available Rides: </h2>
@@ -12,6 +31,8 @@
     <h4> Pick Up Location: <%= ride.pick_up_location %></h4>
     <h4> Number of passengers: <%= ride.num_of_passengers %></h4>
 
-    <%= link_to "Accept", admins_ride_path(ride), method: :put %>
+    <% if @rides_count < 1 %>
+      <%= link_to "Accept", ride_accepted_admins_ride_path(ride) %>
+    <% end %>
   </li>
 <% end %>

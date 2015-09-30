@@ -7,7 +7,13 @@ Rails.application.routes.draw do
 
   namespace :admins do
     # get 'rides', to: 'rides#index'
-    resources :rides
+    resources :rides do
+      member do
+        get :ride_accepted
+        get :picked_up
+        get :dropped_off
+      end
+    end
   end
 
   namespace :users do
