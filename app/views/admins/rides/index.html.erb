@@ -56,19 +56,19 @@
   </thead>
 
   <tbody>
-    <!--<tr>-->
     <% @rides.each do |ride| %>
       <% if ride.num_of_passengers <= current_admin.car_passenger_capacity  %>
-        <td><%= ride.pick_up_location.capitalize %></td>
-        <td><%= ride.num_of_passengers %></td>
-        <td>
-          <% if current_admin.rides.all? { |each_ride| each_ride.complete? } %>
-            <%= link_to "Accept", ride_accepted_admins_ride_path(ride) %>
-          <% end %>
-        </td>
+        <tr>
+          <td><%= ride.pick_up_location.capitalize %></td>
+          <td><%= ride.num_of_passengers %></td>
+          <td>
+            <% if current_admin.rides.all? { |each_ride| each_ride.complete? } %>
+              <%= link_to "Accept", ride_accepted_admins_ride_path(ride) %>
+            <% end %>
+          </td>
+        </tr>
       <% end %>
     <% end %>
-    <!--</tr>-->
   </tbody>
 </table>
 
