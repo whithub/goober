@@ -8,7 +8,8 @@ class Users::RidesController < ApplicationController
   def index
     # @requested_at = current_user.rides.first.created_at.strftime('%l:%M %P')
     @rides_count = current_user.rides.count
-
+    @current_ride = current_user.rides.first
+    @completed_rides = []
   end
 
   def create

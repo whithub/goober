@@ -3,21 +3,20 @@
 
 <%= link_to 'Sign out (as driver)', destroy_admin_session_path, :method => :delete %>
 
-<h3>Rides: <%= current_admin.rides.count %></h3>
+<h3>Rides: <%#= @current_ride.count %></h3>
 <h3>Current Ride Info:</h3>
 
-<% if current_admin.rides.present? %>
-  <h2> Pick Up Location: <%= @current_ride.pick_up_location %></h2>
-  <h2> Number of passengers: <%= @current_ride.num_of_passengers %></h2>
+<% if @current_ride.present? && @current_ride.status != 'complete' %>
+  <h4> Pick Up Location: <%= @current_ride.pick_up_location %></h4>
+  <h4> Number of passengers: <%= @current_ride.num_of_passengers %></h4>
 
-  <%if @current_ride.status == 'accepted' %>
+  <%if @current_ride.accepted? %>
     <%= link_to "Customer Picked Up", picked_up_admins_ride_path(@current_ride) %>
-  <% elsif @current_ride.status == 'in_transit' %>
+  <% elsif @current_ride.in_transit? %>
     <%= link_to "Customer Dropped Off", dropped_off_admins_ride_path(@current_ride) %>
   <% end %>
 
 <% end %>
-
 <hr>
 <hr>
 <hr>
@@ -26,13 +25,32 @@
 
 <h2> Available Rides: </h2>
 
-<% @rides.each do |ride| %>
-  <li>
-    <h4> Pick Up Location: <%= ride.pick_up_location %></h4>
-    <h4> Number of passengers: <%= ride.num_of_passengers %></h4>
+  <% @rides.each do |ride| %>
 
-    <% if @rides_count < 1 %>
-      <%= link_to "Accept", ride_accepted_admins_ride_path(ride) %>
+    <% if ride.num_of_passengers <= current_admin.car_passenger_capacity && ride.active? %>
+      <li>
+        <h4> Pick Up Location: <%= ride.pick_up_location %></h4>
+        <h4> Number of passengers: <%= ride.num_of_passengers %></h4>
+
+
+        <% if current_admin.rides.all? { |each_ride| each_ride.complete? } %>
+          <%= link_to "Accept", ride_accepted_admins_ride_path(ride) %>
+        <% end %>
+      </li>
     <% end %>
-  </li>
+  <% end %>
+
+
+
+<h2> Completed Rides: <%= @completed_rides.count %></h2>
+<% @completed_rides.each do |ride| %>
+  <%= ride.user.name.capitalize %>
+  <%= ride.admin.name.capitalize %>
+  <%= ride.pick_up_location.capitalize %>
+  <%= ride.drop_off_location.capitalize %>
+  <%#= ride.requested_at %>
+  <%#= ride.accepted_at %>
+  <%#= ride.picked_up_at %>
+  <%#= ride.dropped_off_at %>
+  <%#= ride.cost %>
 <% end %>
