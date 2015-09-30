@@ -7,28 +7,28 @@ class Ride < ActiveRecord::Base
                         :drop_off_location, 
                         :num_of_passengers
 
-  # enum status: { active: 0, accepted: 1, picked_up: 2, dropped_off: 3 }
-  #
-  #
-  # include AASM
-  # aasm column: :status, enum: true do
-  #   state :active, :initial => true
-  #   state :accepted
-  #   state :in_transit
-  #   state :complete
-  #
-  #   event :ride_accepted do
-  #     transitions from: :active, to: :accepted
-  #   end
-  #
-  #   event :picked_up do
-  #     transitions from: :accepted, to: :picked_up
-  #   end
-  #
-  #   event :dropped_off do
-  #     transitions from: :picked_up, to: :complete
-  #   end
-  #
-  # end
+  enum status: { active: 0, accepted: 1, in_transit: 2, complete: 3 }
+
+
+  include AASM
+  aasm column: :status, enum: true do
+    state :active, :initial => true
+    state :accepted
+    state :in_transit
+    state :complete
+
+    event :ride_accepted do
+      transitions from: :active, to: :accepted
+    end
+
+    event :picked_up do
+      transitions from: :accepted, to: :in_transit
+    end
+
+    event :dropped_off do
+      transitions from: :in_transit, to: :complete
+    end
+
+  end
 
 end
