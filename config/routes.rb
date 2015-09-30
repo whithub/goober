@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :admins do
-    get 'rides', to: 'rides#index'
+    # get 'rides', to: 'rides#index'
+    resources :rides
   end
-  
+
   namespace :users do
-    get '/users/rides', to: 'users/rides#index'
+    # get '/users/rides', to: 'users/rides#index'
+    resources :rides
   end
 
 end
