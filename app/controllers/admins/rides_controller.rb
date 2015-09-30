@@ -10,17 +10,6 @@ class Admins::RidesController < ApplicationController
   def new
   end
 
-  # def update
-  #   @ride = Ride.find(params[:id])
-  #   @ride.admin = current_admin
-  #
-  #   if @ride.save #.update_attributes(ride_params)
-  #     redirect_to admins_rides_path, notice: "You've accepted a ride."
-  #   else
-  #     flash.now[:alert] = @ride.errors.full_messages.join(", ")
-  #   end
-  # end
-
   def ride_accepted
     @ride = Ride.find(params[:id])
     @ride.admin = current_admin

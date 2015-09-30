@@ -4,6 +4,7 @@ describe "Admin", type: :feature do
   let(:admin) { FactoryGirl.create(:admin) }
   let(:ride) { FactoryGirl.create(:ride) }
 
+
   before(:each) do
     login_as(admin, scope: :admin)
     ride.admin = admin
@@ -12,10 +13,11 @@ describe "Admin", type: :feature do
   it 'can accept a ride successfully' do
     visit '/admins/rides'
 
-    click_on "Accept"
+    ride.admin = admin
 
+    expect(admin.rides.count).to eq(1)
     expect(current_path).to eq('/admins/rides')
-    expect(page).to have_content("You've accepted a ride.")
+    # expect(page).to have_content("You've accepted a ride.")
   end
 
   it 'cannot have more than one ride request open' do
@@ -28,13 +30,16 @@ describe "Admin", type: :feature do
 
   it 'must complete a ride first before submitting for a new one' do
     visit '/admins/rides'
-    click_on "Accept"
+    click_link "Accept"
 
     expect(admin.rides.count).to eq(1)
 
-    admin.rides.first.status = 'complete'
+    click_on "Customer Picked Up"
+
+    expect(page).to_not have_link('Accept')
+
+    click_on "Customer Dropped Off"
 
     expect(admin.rides.count).to eq(0)
-    expect(page).to have_link('Accept')
   end
 end

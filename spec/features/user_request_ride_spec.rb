@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "User", :authentication, type: :feature do
   let(:user) { FactoryGirl.create(:user) }
+  let(:admin) { FactoryGirl.create(:admin) }
 
   it 'can request a ride successfully' do
     login_as(user, scope: :user)
@@ -47,6 +48,8 @@ describe "User", :authentication, type: :feature do
     expect(user.rides.count).to eq(1)
   end
 
+
+
   it 'must complete a ride first before submitting for a new one' do
     login_as(user, scope: :user)
     visit '/users/rides'
@@ -58,9 +61,13 @@ describe "User", :authentication, type: :feature do
 
     expect(page).to_not have_button('Request A Ride')
 
-    user.rides.first.status = 'complete'
+    login_as(admin, scope: :admin)
+    visit '/admins/rides'
+    click_link "Accept"
+    click_on "Customer Picked Up"
+    click_on "Customer Dropped Off"
 
     visit '/users/rides'
-    expect(page).to have_button('Request A Ride')
+    expect(page).to have_content('Request A Ride')
   end
 end
