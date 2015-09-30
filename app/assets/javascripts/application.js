@@ -16,7 +16,7 @@
 
 
 $(document).ready(function() {
-  if ($('body.admin').length > 0) {
+  if ($('body.admin.rides.index').length > 0) {
 
     (function poll() {
       // http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery/
@@ -37,7 +37,7 @@ $(document).ready(function() {
   }
 
 
-  if ($('body.rides').length > 0) {
+  if ($('body.rides.index').length > 0) {
 
     (function poll() {
       // http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery/

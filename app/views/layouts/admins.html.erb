@@ -6,16 +6,9 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="admin">
+<body class="admin <%= [controller_name, action_name].join(' ') %>">
 
 <div class="content">
-
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
 
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="container">
@@ -35,6 +28,13 @@
 
   <br><br>
   <br><br>
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
   <div class="container">
     <div class="row">

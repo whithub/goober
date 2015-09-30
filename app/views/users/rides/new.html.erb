@@ -9,23 +9,19 @@
         <%#= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :pick_up_location %>
+          <%= f.label :pick_up_location, "Pick Up Location" %>
           <%= f.text_field :pick_up_location, autofocus: true, class: "form-control" %>
         </div>
 
         <div class="field">
-          <%= f.label :drop_off_location %><br />
+          <%= f.label :drop_off_location, "Drop Off Location" %><br />
           <%= f.text_field :drop_off_location, autofocus: true, class: "form-control" %>
         </div>
 
         <div class="field">
-          <%= f.label :num_of_passengers %>
+          <%= f.label :num_of_passengers, "Number of Passengers" %>
           <%= f.number_field :num_of_passengers, autofocus: true, class: "form-control" %>
-        </div>
-
-        <div class="field">
-          <%= render "devise/shared/links" %>
-        </div>
+        </div><br>
 
         <div class="actions">
           <%= f.submit "Request Ride", class: "btn btn-default"%>
@@ -37,43 +33,3 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1> Enter Info below to reserve a ride </h1>
-
-
-<%= form_for @ride, url: users_rides_path do |f| %>
-  <%#= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :pick_up_location %>
-    <%= f.text_field :pick_up_location, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :drop_off_location %><br />
-    <%= f.text_field :drop_off_location, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :num_of_passengers %>
-    <%= f.number_field :num_of_passengers, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Request Ride" %>
-  </div>
-<% end %>
-
-<%#= render "devise/shared/links" %>
