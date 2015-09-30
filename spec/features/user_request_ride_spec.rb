@@ -54,6 +54,7 @@ describe "User", :authentication, type: :feature do
     login_as(user, scope: :user)
     visit '/users/rides'
     click_on "Request A Ride"
+
     fill_in 'ride_pick_up_location', with: 'Denver'
     fill_in 'ride_drop_off_location', with: 'Boulder'
     fill_in 'ride_num_of_passengers', with: 4

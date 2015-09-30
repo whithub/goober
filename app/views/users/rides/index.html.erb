@@ -1,41 +1,114 @@
-<h1>User Rides Dashboard! </h1>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">Goober</a>
+    </div>
 
-<% if current_user.rides.all? { |each_ride| each_ride.complete? } %>
-  <%= link_to "Request A Ride", new_users_ride_path %>
-<% end %>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav sign-out">
+        <% if current_user %>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
 
 
-<%= link_to 'Sign out (as rider)', destroy_user_session_path, :method => :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 rider-dashboard-header">
+      <h1>Rider Dashboard </h1>
+      <br>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-lg-12 request-ride-button" >
+      <% if current_user.rides.all? { |each_ride| each_ride.complete? } %>
+        <%= link_to "Request A Ride", new_users_ride_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+    </div>
+  </div>
 
-<h3>Rides: <%= current_user.rides.count %></h3>
+  <table class="table table-striped">
+    <h3> Current Ride Request: </h3>
 
+    <thead>
+    <tr>
+      <th>Row</th>
+      <th>Pick Up</th>
+      <th>Drop Off</th>
+      <th>Passengers</th>
+      <th>Driver</th>
+      <th>Requested At</th>
+      <th>Accepted At</th>
+      <th>Pickup Time</th>
+    </tr>
+    </thead>
 
-<% if @current_ride.present? && @current_ride.status != 'complete' %>
-  <h3>Pick Up Location: <%= @current_ride.pick_up_location.capitalize %></h3>
-  <h3>Drop Off Location: <%= @current_ride.drop_off_location.capitalize %></h3>
-  <h3>Passengers: <%= @current_ride.num_of_passengers %></h3>
-  <% if @current_ride.admin.present? %>
-    <h3>Driver: <%= @current_ride.admin.name.capitalize %></h3>
-  <% end %>
-  <h3>Time Ride Was Requested At: <%= @current_ride.created_at.strftime('%l:%M %P') %></h3>
+    <% if @current_ride.present? && @current_ride.status != 'complete' %>
+
+    <tbody>
+    <tr>
+      <td><%= @current_ride.pick_up_location.capitalize %></td>
+      <td><%= @current_ride.drop_off_location.capitalize %></td>
+      <td><%= @current_ride.num_of_passengers %></td>
+      <% if @current_ride.admin.present? %>
+        <td><%= @current_ride.admin.name.capitalize %></td>
+      <% end %>
+      <td><%= @current_ride.created_at.strftime('%l:%M %P') %></td>
+      <td><%= @current_ride.accepted_time %></td>
+      <td><%= @current_ride.accepted_time %></td>
+      <td><%= @current_ride.pickup_time %></td>
+    </tr>
+    </tbody>
+
+    <% end %>
+  </table>
+
   <br>
-  <h3>Accepted At: <%= @current_ride.accepted_time %></h3><br>
+  <hr>
+  <br>
 
-  <h3>Picked Up At: <%= @current_ride.pickup_time %></h3><br>
-  
-  <!--<h3>Dropped Off At: <%#= @current_ride.dropoff_time %></h3><br>-->
-<% end %>
 
-<h2> Completed Rides: <%= @completed_rides.count %></h2>
-  <% @completed_rides.each do |ride| %>
-    <%= ride.user.name.capitalize %>
-    <%= ride.admin.name.capitalize %>
-    <%= ride.pick_up_location.capitalize %>
-    <%= ride.drop_off_location.capitalize %>
-    <%= ride.created_at.strftime('%l:%M %P') %>
-    <%= ride.accepted_time %>
-    <%= ride.pickup_time %>
-    <%= ride.dropoff_time %>
-    $<%= ride.cost.to_i %>.00
-  <% end %>
+  <table class="table table-striped">
+    <h3> Completed Rides: <%= @completed_rides.count %></h3>
+
+    <thead>
+    <tr>
+      <th>Rider</th>
+      <th>Driver</th>
+      <th>Pick Up</th>
+      <th>Drop Off</th>
+      <th>Requested At</th>
+      <th>Accepted At</th>
+      <th>Pickup Time</th>
+      <th>DropOff Time</th>
+      <th>Cost</th>
+    </tr>
+    </thead>
+
+    <tr>
+    <tbody>
+      <% @completed_rides.each do |ride| %>
+        <td><%= ride.user.name.capitalize %></td>
+        <td><%= ride.admin.name.capitalize %></td>
+        <td><%= ride.pick_up_location.capitalize %></td>
+        <td><%= ride.drop_off_location.capitalize %></td>
+        <td><%= ride.created_at.strftime('%l:%M %P') %></td>
+        <td><%= ride.accepted_time %></td>
+        <td><%= ride.pickup_time %></td>
+        <td><%= ride.dropoff_time %></td>
+        <td>$<%= ride.cost.to_i %>.00</td>
+      <% end %>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "UserSessions", type: :feature do
 
-  context "brand new user" do
+  context "brand new user," do
     it "can sign up successfully" do
       visit '/'
       click_on "A Rider"
@@ -43,8 +43,8 @@ describe "UserSessions", type: :feature do
   end
 
 
-  context "when user logs in" do
-    describe "if user exists" do
+  context "when user logs in," do
+    describe "if user exists," do
       it "logs in and logs out user successfully" do
         User.create!(name: "Justin",
                      email: 'justin@example.com',
@@ -60,9 +60,9 @@ describe "UserSessions", type: :feature do
         expect(current_path).to eq('/users/rides')
         expect(page).to have_link('Request A Ride')
 
-        click_on "Sign out "
+        click_link "Sign out"
 
-        expect(current_path).to eq('/')
+        expect(current_path).to eq(root_path)
       end
     end
 
