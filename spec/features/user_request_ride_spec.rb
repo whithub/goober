@@ -35,6 +35,16 @@ describe "User", :authentication, type: :feature do
 
     expect(user.rides.count).to eq(1)
     expect(page).to_not have_button('Request A Ride')
+
+    visit '/users/rides/new'
+
+    fill_in 'ride_pick_up_location', with: 'Texas'
+    fill_in 'ride_drop_off_location', with: 'Canada'
+    fill_in 'ride_num_of_passengers', with: 2
+    click_on 'Request Ride'
+
+    expect(page).to have_content('You can only have one active ride at a time.')
+    expect(user.rides.count).to eq(1)
   end
 
   it 'must complete a ride first before submitting for a new one' do

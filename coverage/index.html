@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-29T23:33:42-06:00">2015-09-29T23:33:42-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-29T23:40:02-06:00">2015-09-29T23:40:02-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">91.91%</span></span>
+    (<span class="covered_percent"><span class="green">92.09%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.52
+         1.55
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>45</b> files in total.
-    <b>383</b> relevant lines. 
-    <span class="green"><b>352</b> lines covered</span> and
+    <b>392</b> relevant lines. 
+    <span class="green"><b>361</b> lines covered</span> and
     <span class="red"><b>31</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -87,17 +87,17 @@
         <td>18</td>
         <td>15</td>
         <td>3</td>
-        <td>8.4</td>
+        <td>8.9</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#fa078cd8564129c1c141b155bbae3abd31d58209" class="src_link" title="app/controllers/users/rides_controller.rb">app/controllers/users/rides_controller.rb</a></td>
-        <td class="yellow strong">86.67 %</td>
-        <td>32</td>
+        <td class="yellow strong">88.24 %</td>
+        <td>36</td>
+        <td>17</td>
         <td>15</td>
-        <td>13</td>
         <td>2</td>
-        <td>1.9</td>
+        <td>2.2</td>
       </tr>
       
       <tr>
@@ -412,10 +412,10 @@
       
       <tr>
         <td class="strong"><a href="#25d98d9257a809fc0b45a116209c6809b61992a0" class="src_link" title="spec/features/user_request_ride_spec.rb">spec/features/user_request_ride_spec.rb</a></td>
-        <td class="green strong">94.59 %</td>
-        <td>56</td>
-        <td>37</td>
-        <td>35</td>
+        <td class="green strong">95.45 %</td>
+        <td>66</td>
+        <td>44</td>
+        <td>42</td>
         <td>2</td>
         <td>1.0</td>
       </tr>
@@ -1280,14 +1280,14 @@
           <code class="ruby">  def logged_in?</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="20">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="20">
+          <span class="hits">16</span>
           
           <code class="ruby">    if current_user</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="21">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="21">
+          <span class="hits">16</span>
           
           <code class="ruby">      true</code>
         </li>
@@ -1328,8 +1328,8 @@
           <code class="ruby">  def require_login</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="28">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="28">
+          <span class="hits">16</span>
           
           <code class="ruby">    unless logged_in?</code>
         </li>
@@ -1383,10 +1383,10 @@
         <div class="source_table" id="fa078cd8564129c1c141b155bbae3abd31d58209">
   <div class="header">
     <h3>app/controllers/users/rides_controller.rb</h3>
-    <h4><span class="yellow">86.67 %</span> covered</h4>
+    <h4><span class="yellow">88.24 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -1418,8 +1418,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="5">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
           <code class="ruby">    @ride = current_user.rides.new</code>
         </li>
@@ -1448,8 +1448,8 @@
           <code class="ruby">    # @requested_at = current_user.rides.first.created_at.strftime(&#39;%l:%M %P&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="10">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="10">
+          <span class="hits">8</span>
           
           <code class="ruby">    @rides_count = current_user.rides.count</code>
         </li>
@@ -1478,8 +1478,8 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="15">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
           <code class="ruby">    @ride = current_user.rides.new(ride_params)</code>
         </li>
@@ -1490,82 +1490,82 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="17">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="17">
+          <span class="hits">4</span>
           
-          <code class="ruby">    if @ride.save</code>
+          <code class="ruby">    if current_user.rides.count &lt; 1</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="18">
           <span class="hits">3</span>
           
-          <code class="ruby">      redirect_to users_rides_path, notice: &quot;Ride has been requested.&quot;</code>
+          <code class="ruby">      if @ride.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="3" data-linenumber="19">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    else</code>
+          <code class="ruby">        redirect_to users_rides_path, notice: &quot;Ride has been requested.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      flash[:alert] = @ride.errors.full_messages.join(&#39;, &#39;)</code>
+          <code class="ruby">      else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">      render :new</code>
+          <code class="ruby">        flash[:alert] = @ride.errors.full_messages.join(&#39;, &#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        render :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">      redirect_to users_rides_path, notice: &quot;You can only have one active ride at a time.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def ride_params</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="28">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    params.require(:ride).permit(:pick_up_location, :drop_off_location, :num_of_passengers)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -1574,13 +1574,37 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def ride_params</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="32">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    params.require(:ride).permit(:pick_up_location, :drop_off_location, :num_of_passengers)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">end</code>
@@ -6591,10 +6615,10 @@
         <div class="source_table" id="25d98d9257a809fc0b45a116209c6809b61992a0">
   <div class="header">
     <h3>spec/features/user_request_ride_spec.rb</h3>
-    <h4><span class="green">94.59 %</span> covered</h4>
+    <h4><span class="green">95.45 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>35</b> lines covered</span> and
+      <b>44</b> relevant lines. 
+      <span class="green"><b>42</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -6827,112 +6851,172 @@
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;must complete a ride first before submitting for a new one&#39; do</code>
+          <code class="ruby">    visit &#39;/users/rides/new&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">    login_as(user, scope: :user)</code>
+          <code class="ruby">    fill_in &#39;ride_pick_up_location&#39;, with: &#39;Texas&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit &#39;/users/rides&#39;</code>
+          <code class="ruby">    fill_in &#39;ride_drop_off_location&#39;, with: &#39;Canada&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &quot;Request A Ride&quot;</code>
+          <code class="ruby">    fill_in &#39;ride_num_of_passengers&#39;, with: 2</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;ride_pick_up_location&#39;, with: &#39;Denver&#39;</code>
+          <code class="ruby">    click_on &#39;Request Ride&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="45">
           
-          <code class="ruby">    fill_in &#39;ride_drop_off_location&#39;, with: &#39;Boulder&#39;</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;ride_num_of_passengers&#39;, with: 4</code>
+          <code class="ruby">    expect(page).to have_content(&#39;You can only have one active ride at a time.&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &#39;Request Ride&#39;</code>
+          <code class="ruby">    expect(user.rides.count).to eq(1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to_not have_button(&#39;Request A Ride&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">  it &#39;must complete a ride first before submitting for a new one&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">    user.rides.status = &#39;complete&#39;</code>
+          <code class="ruby">    login_as(user, scope: :user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/users/rides&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;Request A Ride&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;ride_pick_up_location&#39;, with: &#39;Denver&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;ride_drop_off_location&#39;, with: &#39;Boulder&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;ride_num_of_passengers&#39;, with: 4</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Request Ride&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to_not have_button(&#39;Request A Ride&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user.rides.status = &#39;complete&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">    visit &#39;/users/rides&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">    expect(page).to have_button(&#39;Request A Ride&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">end</code>
