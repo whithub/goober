@@ -5,9 +5,12 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/users/rides', to: 'users/rides#index'
   namespace :admins do
     get 'rides', to: 'rides#index'
+  end
+  
+  namespace :users do
+    get '/users/rides', to: 'users/rides#index'
   end
 
 end
