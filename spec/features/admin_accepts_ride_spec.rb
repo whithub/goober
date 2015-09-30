@@ -11,7 +11,6 @@ describe "Admin", type: :feature do
     ride.user = user
 
     login_as(admin, scope: :admin)
-    ride.admin = admin
   end
 
   it 'can accept a ride successfully' do
