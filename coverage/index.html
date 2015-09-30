@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-30T08:50:18-06:00">2015-09-30T08:50:18-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-30T09:45:27-06:00">2015-09-30T09:45:27-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.48%</span></span>
+    (<span class="covered_percent"><span class="green">92.75%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.67
+         1.69
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>43</b> files in total.
-    <b>505</b> relevant lines. 
-    <span class="green"><b>467</b> lines covered</span> and
+    <b>44</b> files in total.
+    <b>524</b> relevant lines. 
+    <span class="green"><b>486</b> lines covered</span> and
     <span class="red"><b>38</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#522ae9c0aee7efc228a41044dbc24e9efd619b76" class="src_link" title="app/controllers/admins/rides_controller.rb">app/controllers/admins/rides_controller.rb</a></td>
-        <td class="green strong">93.33 %</td>
+        <td class="green strong">96.77 %</td>
         <td>50</td>
+        <td>31</td>
         <td>30</td>
-        <td>28</td>
-        <td>2</td>
-        <td>1.9</td>
+        <td>1</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
@@ -87,17 +87,17 @@
         <td>18</td>
         <td>15</td>
         <td>3</td>
-        <td>9.1</td>
+        <td>9.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#fa078cd8564129c1c141b155bbae3abd31d58209" class="src_link" title="app/controllers/users/rides_controller.rb">app/controllers/users/rides_controller.rb</a></td>
-        <td class="yellow strong">89.47 %</td>
-        <td>37</td>
-        <td>19</td>
-        <td>17</td>
-        <td>2</td>
-        <td>3.0</td>
+        <td class="yellow strong">86.96 %</td>
+        <td>45</td>
+        <td>23</td>
+        <td>20</td>
+        <td>3</td>
+        <td>2.7</td>
       </tr>
       
       <tr>
@@ -411,6 +411,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#4048d450d30cb47cd08c3b3213a57b80c3599003" class="src_link" title="spec/features/completed_rides_spec.rb">spec/features/completed_rides_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>36</td>
+        <td>14</td>
+        <td>14</td>
+        <td>0</td>
+        <td>1.6</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#d141d2b50237fccc256a4407e7d76343b6e90672" class="src_link" title="spec/features/user_auth_spec.rb">spec/features/user_auth_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>80</td>
@@ -467,7 +477,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>5.2</td>
+        <td>5.4</td>
       </tr>
       
       <tr>
@@ -877,11 +887,11 @@
         <div class="source_table" id="522ae9c0aee7efc228a41044dbc24e9efd619b76">
   <div class="header">
     <h3>app/controllers/admins/rides_controller.rb</h3>
-    <h4><span class="green">93.33 %</span> covered</h4>
+    <h4><span class="green">96.77 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>28</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>31</b> relevant lines. 
+      <span class="green"><b>30</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -930,20 +940,20 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="8">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="8">
+          <span class="hits">8</span>
           
           <code class="ruby">    @rides = Ride.all</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="9">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="9">
+          <span class="hits">8</span>
           
           <code class="ruby">    @rides_count = current_admin.rides.count</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="10">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="10">
+          <span class="hits">8</span>
           
           <code class="ruby">    @completed_rides = current_admin.rides.where(status: 3)</code>
         </li>
@@ -999,127 +1009,127 @@
         <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
+          <code class="ruby">    @ride.accepted_time = @ride.updated_at.strftime(&#39;%l:%M %P&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
+          
           <code class="ruby">    @ride.ride_accepted!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    # @accepted_at = @ride.updated_at.strftime(&#39;%l:%M %P&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
+        <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
           <code class="ruby">    redirect_to admins_rides_path, notice: &quot;You&#39;ve accepted a ride.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def picked_up</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    @ride = Ride.find(params[:id])</code>
+          <code class="ruby">  def picked_up</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    @ride.picked_up!</code>
+          <code class="ruby">    @ride = Ride.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
+          <code class="ruby">    @ride.pickup_time = @ride.updated_at.strftime(&#39;%l:%M %P&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @ride.picked_up!</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
           <code class="ruby">    redirect_to admins_rides_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def dropped_off</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @ride = Ride.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    @ride.dropped_off!</code>
+          <code class="ruby">  def dropped_off</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">    @current_ride = &#39;&#39;</code>
+          <code class="ruby">    @ride = Ride.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">    redirect_to admins_rides_path</code>
+          <code class="ruby">    @ride.dropoff_time = @ride.updated_at.strftime(&#39;%l:%M %P&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @ride.dropped_off!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    @current_ride = &#39;&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  def completed_rides</code>
+          <code class="ruby">    redirect_to admins_rides_path</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">    current_admin.rides.where(status: :complete)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
@@ -1146,8 +1156,8 @@
           <code class="ruby">  def set_current_ride</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="44">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="44">
+          <span class="hits">8</span>
           
           <code class="ruby">    @current_ride = current_admin.rides.last #find(params[:id])</code>
         </li>
@@ -1518,14 +1528,14 @@
           <code class="ruby">  def logged_in?</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="20">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="18" data-linenumber="20">
+          <span class="hits">18</span>
           
           <code class="ruby">    if current_user</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="21">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="18" data-linenumber="21">
+          <span class="hits">18</span>
           
           <code class="ruby">      true</code>
         </li>
@@ -1566,8 +1576,8 @@
           <code class="ruby">  def require_login</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="28">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="18" data-linenumber="28">
+          <span class="hits">18</span>
           
           <code class="ruby">    unless logged_in?</code>
         </li>
@@ -1621,11 +1631,11 @@
         <div class="source_table" id="fa078cd8564129c1c141b155bbae3abd31d58209">
   <div class="header">
     <h3>app/controllers/users/rides_controller.rb</h3>
-    <h4><span class="yellow">89.47 %</span> covered</h4>
+    <h4><span class="yellow">86.96 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>23</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -1644,64 +1654,64 @@
           <code class="ruby">  before_filter :require_login</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_action :set_current_ride, only: [:index]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="5">
+        <li class="covered" data-hits="4" data-linenumber="6">
           <span class="hits">4</span>
           
           <code class="ruby">    @ride = current_user.rides.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">    # @requested_at = current_user.rides.first.created_at.strftime(&#39;%l:%M %P&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="10">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="11">
+          <span class="hits">10</span>
           
           <code class="ruby">    @rides_count = current_user.rides.count</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="11">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="12">
+          <span class="hits">10</span>
           
-          <code class="ruby">    @current_ride = current_user.rides.first</code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="12">
-          <span class="hits">9</span>
-          
-          <code class="ruby">    @completed_rides = []</code>
+          <code class="ruby">    @completed_rides = current_user.rides.where(status: 3)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1809,37 +1819,37 @@
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def completed_rides</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    current_user.rides.where(status: :complete)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def ride_params</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="33">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    params.require(:ride).permit(:pick_up_location, :drop_off_location, :num_of_passengers)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
@@ -1848,7 +1858,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def ride_params</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="38">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    params.require(:ride).permit(:pick_up_location, :drop_off_location, :num_of_passengers)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_current_ride</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="42">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    @current_ride = current_user.rides.last #find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">end</code>
@@ -6742,6 +6800,240 @@
   </pre>
 </div>
       
+        <div class="source_table" id="4048d450d30cb47cd08c3b3213a57b80c3599003">
+  <div class="header">
+    <h3>spec/features/completed_rides_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &quot;Completed ride&quot;, type: :feature do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let(:admin) { FactoryGirl.create(:admin) }</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let(:user)  { FactoryGirl.create(:user) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before(:each) do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    ride = Ride.create(user_id: 9, admin_id: 6, status: 3,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">                pick_up_location: &quot;Denver&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">                drop_off_location: &quot;Boulder&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">                num_of_passengers: 2,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">                created_at: Time.now,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">                accepted_time: &#39;3:30pm&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">                pickup_time: &#39;3:38&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">                dropoff_time: &#39;3:58&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    ride.admin = admin</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    ride.user = user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    login_as(admin, scope: :admin)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    login_as(user, scope: :user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;info can be viewed on rider dashboard&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/users/rides&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    # assert_selector(&#39;div&#39;, id: &#39;completed_rides&#39;, text: &#39;&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">    # within(&#39;#completed_rides&#39;).expect(page).to have_content(&quot;Denver&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;info can be viewed on driver dashboard&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/admins/rides&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="d141d2b50237fccc256a4407e7d76343b6e90672">
   <div class="header">
     <h3>spec/features/user_auth_spec.rb</h3>
@@ -9264,8 +9556,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="47" data-linenumber="52">
-          <span class="hits">47</span>
+        <li class="covered" data-hits="49" data-linenumber="52">
+          <span class="hits">49</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -9288,8 +9580,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="47" data-linenumber="56">
-          <span class="hits">47</span>
+        <li class="covered" data-hits="49" data-linenumber="56">
+          <span class="hits">49</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>

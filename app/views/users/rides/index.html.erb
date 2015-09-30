@@ -10,7 +10,8 @@
 
 <h3>Rides: <%= current_user.rides.count %></h3>
 
-<% if current_user.rides.present? %>
+
+<% if @current_ride.present? && @current_ride.status != 'complete' %>
   <h3>Pick Up Location: <%= @current_ride.pick_up_location.capitalize %></h3>
   <h3>Drop Off Location: <%= @current_ride.drop_off_location.capitalize %></h3>
   <h3>Passengers: <%= @current_ride.num_of_passengers %></h3>
@@ -19,31 +20,22 @@
   <% end %>
   <h3>Time Ride Was Requested At: <%= @current_ride.created_at.strftime('%l:%M %P') %></h3>
   <br>
+  <h3>Accepted At: <%= @current_ride.accepted_time %></h3><br>
 
-<% if @current_ride.accepted? %>
-  <h3>Accepted At: <%= @current_ride.updated_at.strftime('%l:%M %P') %></h3><br>
+  <h3>Picked Up At: <%= @current_ride.pickup_time %></h3><br>
+  
+  <!--<h3>Dropped Off At: <%#= @current_ride.dropoff_time %></h3><br>-->
 <% end %>
 
-
-<% if @current_ride.in_transit? %>
-  <h3>Picked Up At: <%= @current_ride.updated_at.strftime('%l:%M %P') %></h3><br>
-<% end %>
-<!--<%# elsif current_user.rides.present? && @current_ride.complete? %>-->
-  <!--<h3>Dropped Off At: <%#= @current_ride.updated_at.strftime('%l:%M %P') %></h3>-->
-<!--<%# end %>-->
-<% end %>
-
-<h2> Completed Rides: </h2>
-<% if @completed_rides.count > 0 %>
+<h2> Completed Rides: <%= @completed_rides.count %></h2>
   <% @completed_rides.each do |ride| %>
-    <%= ride.user %>
-    <%= ride.admin %>
-    <%= ride.pick_up_location %>
-    <%= ride.drop_off_location %>
-    <%#= ride.requested_at %>
-    <%#= ride.accepted_at %>
-    <%#= ride.picked_up_at %>
-    <%#= ride.dropped_off_at %>
+    <%= ride.user.name.capitalize %>
+    <%= ride.admin.name.capitalize %>
+    <%= ride.pick_up_location.capitalize %>
+    <%= ride.drop_off_location.capitalize %>
+    <%= ride.created_at.strftime('%l:%M %P') %>
+    <%= ride.accepted_time %>
+    <%= ride.pickup_time %>
+    <%= ride.dropoff_time %>
     <%#= ride.cost %>
   <% end %>
-<% end %>

@@ -16,6 +16,7 @@ class Admins::RidesController < ApplicationController
   def ride_accepted
     @ride = Ride.find(params[:id])
     @ride.admin = current_admin
+    @ride.accepted_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.ride_accepted!
     # @accepted_at = @ride.updated_at.strftime('%l:%M %P')
     redirect_to admins_rides_path, notice: "You've accepted a ride."
@@ -23,20 +24,19 @@ class Admins::RidesController < ApplicationController
 
   def picked_up
     @ride = Ride.find(params[:id])
+    @ride.pickup_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.picked_up!
     redirect_to admins_rides_path
   end
 
   def dropped_off
     @ride = Ride.find(params[:id])
+    @ride.dropoff_time = @ride.updated_at.strftime('%l:%M %P')
     @ride.dropped_off!
     @current_ride = ''
     redirect_to admins_rides_path
   end
 
-  def completed_rides
-    current_admin.rides.where(status: :complete)
-  end
 
   private
 

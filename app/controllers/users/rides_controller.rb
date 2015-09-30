@@ -1,5 +1,6 @@
 class Users::RidesController < ApplicationController
   before_filter :require_login
+  before_action :set_current_ride, only: [:index]
 
   def new
     @ride = current_user.rides.new
@@ -8,8 +9,7 @@ class Users::RidesController < ApplicationController
   def index
     # @requested_at = current_user.rides.first.created_at.strftime('%l:%M %P')
     @rides_count = current_user.rides.count
-    @current_ride = current_user.rides.first
-    @completed_rides = []
+    @completed_rides = current_user.rides.where(status: 3)
   end
 
   def create
@@ -27,11 +27,19 @@ class Users::RidesController < ApplicationController
     end
   end
 
+  def completed_rides
+    current_user.rides.where(status: :complete)
+  end
+
+
   private
 
   def ride_params
     params.require(:ride).permit(:pick_up_location, :drop_off_location, :num_of_passengers)
   end
 
+  def set_current_ride
+    @current_ride = current_user.rides.last #find(params[:id])
+  end
 
 end
