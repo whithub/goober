@@ -13,3 +13,48 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  if ($('body.admin').length > 0) {
+
+    (function poll() {
+      // http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery/
+      setTimeout(function() {
+        $.ajax({
+          url: "/admins/rides",
+          success: function(data) {
+            //Update your dashboard
+            $('#page').html(data);
+            console.log('updated rides');
+          },
+          dataType: "html",
+          complete: poll,
+          timeout: 3000
+        });
+      }, 3000);
+    })();
+  }
+
+
+  if ($('body:not(.admin)').length > 0) {
+
+    (function poll() {
+      // http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery/
+      setTimeout(function() {
+        $.ajax({
+          url: "/users/rides",
+          success: function(data) {
+            //Update your dashboard
+            $('#page').html(data);
+            console.log('updated rides');
+          },
+          dataType: "html",
+          complete: poll,
+          timeout: 3000
+        });
+      }, 3000);
+    })();
+  }
+
+});

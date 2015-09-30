@@ -2,10 +2,18 @@ class Admins::RidesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_current_ride, only: [:index]
 
+  layout 'admins'
+
   def index
     @rides = Ride.all
     @rides_count = current_admin.rides.count
     @completed_rides = current_admin.rides.where(status: 3)
+
+    if request.xhr?
+      render layout: false
+    else
+      render
+    end
   end
 
   def new

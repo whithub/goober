@@ -7,17 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">Goober</a>
+    </div>
 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav sign-out">
+        <% if current_user %>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
 <div class="content">
 
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <div class="alert alert-success"><%= notice %></div>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <div class="alert alert-danger"><%= alert %></div>
   <% end %>
 
-  <%= yield %>
+  <div id="page">
+    <%= yield %>
+  </div>
 </div>
 
 </body>

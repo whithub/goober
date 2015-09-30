@@ -10,12 +10,18 @@ class Users::RidesController < ApplicationController
     # @requested_at = current_user.rides.first.created_at.strftime('%l:%M %P')
     @rides_count = current_user.rides.count
     @completed_rides = current_user.rides.where(status: 3)
+
+    if request.xhr?
+      render layout: false
+    else
+      render
+    end
   end
 
   def create
     @ride = current_user.rides.new(ride_params)
 
-    if current_user.rides.count < 1
+    if current_user.rides.not_complete.count == 0
       if @ride.save
         redirect_to users_rides_path, notice: "Ride has been requested."
       else
