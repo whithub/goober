@@ -2,7 +2,7 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :timeoutable, :lockable, :validatable
 
-  has_one :ride
+  has_many :rides
 
   validates_presence_of :name, :phone_number,
                         :car_make, :car_model,

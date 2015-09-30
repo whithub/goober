@@ -1,7 +1,14 @@
 <h1>User Rides Dashboard! </h1>
 
-
-<%= link_to "Request A Ride", new_users_ride_path %>
+<% if @rides_count < 1 %>
+  <%= link_to "Request A Ride", new_users_ride_path %>
+<% end %>
 
 
 <%= link_to 'Sign out (as rider)', destroy_user_session_path, :method => :delete %>
+
+
+<h3>Rides: <%= current_user.rides.count %></h3>
+
+
+<h3>Time Ride Was Requested At: <%#= @requested_at %></h3>

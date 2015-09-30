@@ -1,7 +1,7 @@
 <h1> Enter Info below to reserve a ride </h1>
 
 
-<%= form_for :user do |f| %>
+<%= form_for @ride, url: users_rides_path do |f| %>
   <%#= devise_error_messages! %>
 
   <div class="field">
